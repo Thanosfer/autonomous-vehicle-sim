@@ -29,7 +29,7 @@ public:
     std::string getText() const;
     
     // Επιστρέφει το γλύφο ανάλογα με τον τύπο
-    char getGlyph() const; 
+    char getGlyph() const override;
     
     // Ελέγχει αν η πινακίδα επηρεάζει την κίνηση
     bool affectsMovement() const;

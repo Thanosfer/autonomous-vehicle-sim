@@ -69,8 +69,10 @@ int main(int argc, char* argv[]) {
     cout << "\n--- STARTING SIMULATION ---\n";
     
     bool simulationEnded = false;
-    
+    int ticksDone = 0;  // Πόσα βήματα έγιναν στην πραγματικότητα
+
     for (int tick = 1; tick <= config.simulationTicks && !simulationEnded; tick++) {
+        ticksDone = tick;
         Visualization::printSimulationStatus(tick, config.simulationTicks, *selfDrivingCar);
         
         // Ενημέρωση όλων των αντικειμένων (κινούμενα, φανάρια, κλπ.)
@@ -126,7 +128,7 @@ int main(int argc, char* argv[]) {
     
     // Στατιστικά
     cout << "\n=== SIMULATION STATS ===\n";
-    cout << "Total ticks: " << min(config.simulationTicks, config.simulationTicks) << endl;
+    cout << "Total ticks: " << ticksDone << endl;
     cout << "Final car position: (" << selfDrivingCar->getPosition().getX() << ", "<< selfDrivingCar->getPosition().getY() << ")" << endl;
     cout << "Objects left: " << world.getObjectCount() << endl;
     
