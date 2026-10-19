@@ -1,0 +1,12 @@
+# Build output
+obj/
+oopproj_2025
+
+# Runtime log
+oopproj_2025.log
+
+# macOS
+.DS_Store
+
+# Original course report (replaced by README.md)
+Readme.pdf
